@@ -48,7 +48,18 @@ git push
 - Retry the push with exponential backoff on network errors (2s, 4s, 8s, 16s).
 - Never switch branches to do this; commit on whatever branch is checked out.
 
-## Step 3 — Confirm
+## Step 3 — Remind about a pull request
+A learning session's work should land in a PR. After committing:
+- Check whether an open PR already exists for the current branch (GitHub MCP:
+  `list_pull_requests` filtered by head branch).
+- If one exists, note that the push has updated it — no new PR needed.
+- If none exists and the branch has commits ahead of the default branch, remind
+  the learner they can open a PR, and offer to create it now (base = the repo's
+  default branch, head = current branch). Only create it if they say yes — don't
+  open a PR unprompted.
+Keep this to a sentence or two; it's a nudge, not a lecture.
+
+## Step 4 — Confirm
 Tell the user what you journaled, the commit hash, and that it's pushed. If a
 scheduled reminder invoked this and there was nothing new to save, keep the
 report to one line.
