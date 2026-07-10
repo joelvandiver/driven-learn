@@ -2,12 +2,12 @@
   "version": 1,
   "learner": "joelvandiver@gmail.com",
   "rotation": ["rust", "postgres"],
-  "rotation_index": 0,
+  "rotation_index": 1,
   "topics": {
     "rust": {
       "curriculum": "curriculum/rust.md",
       "module": 1,
-      "lesson_seq": 0,
+      "lesson_seq": 1,
       "completed_modules": [],
       "lessons_dir": "lessons/rust"
     },
@@ -19,8 +19,16 @@
       "lessons_dir": "lessons/postgres"
     }
   },
-  "active_lesson": null,
-  "streak": 0,
-  "last_lesson_date": null,
-  "history": []
+  "active_lesson": {
+    "topic": "rust",
+    "module": 1,
+    "seq": "0001",
+    "path": "learning/lessons/rust/0001-values-variables-and-mutability.md",
+    "assigned_date": "2026-07-10"
+  },
+  "streak": 1,
+  "last_lesson_date": "2026-07-10",
+  "history": [
+    { "seq": "0001", "topic": "rust", "module": 1, "event": "assigned", "date": "2026-07-10" }
+  ]
 }
