@@ -84,6 +84,15 @@ Show the full lesson in chat (the same content you saved). End with a short
 line telling the learner they can attempt the problems, then run `/dl-grade`
 to submit, or `/dl-help` if they get stuck — and note their current streak.
 
+## Step 8 — Persist progress
+The runtime is ephemeral, so progress only survives once it's pushed. Commit
+the updated `learning/state.json` and the new lesson file and push to the
+current branch:
+`git add learning/ && git commit -m "dl-next: assign {topic} module {n} ({SEQ})" && git push`
+If the push fails on a network error, retry with backoff. If it fails because
+there's no upstream, set one with `git push -u origin <current-branch>`. Never
+switch branches to do this.
+
 ## Where the learner puts work
 When you present the lesson, remind them they can either paste their answers
 into chat when grading, or drop files under

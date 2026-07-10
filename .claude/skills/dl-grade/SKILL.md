@@ -69,6 +69,16 @@ the rubric and feedback. Update the lesson file's frontmatter `status` to
 - If **practicing**: leave `module` and `active_lesson` as-is.
 Write `state.json` back.
 
+## Step 7 — Persist progress
+The runtime is ephemeral, so progress only survives once it's pushed. Stage the
+learner's submission (if it lives in `learning/submissions/`), the grade report,
+the updated lesson frontmatter, and `learning/state.json`, then commit and push
+to the current branch:
+`git add learning/ && git commit -m "dl-grade: {topic} module {n} ({SEQ}) — {result}" && git push`
+If the learner pasted their code in chat rather than saving files, first write
+it to `learning/submissions/{topic}/{SEQ}-{slug}/` so their attempt is captured
+in the repo too. Retry the push with backoff on network errors.
+
 ## Tone
 Lead with something they got right. Be concrete about fixes. Close with one
 sentence on what to focus on next. Never shame; never flatter.
