@@ -81,4 +81,6 @@ in the repo too. Retry the push with backoff on network errors.
 
 ## Tone
 Lead with something they got right. Be concrete about fixes. Close with one
-sentence on what to focus on next. Never shame; never flatter.
+sentence on what to focus on next. Never shame; never flatter. If the session
+feels like it's wrapping up, remind them they can run `/dl-log` to save the
+conversation notes.

@@ -83,6 +83,8 @@ Write `state.json` back.
 Show the full lesson in chat (the same content you saved). End with a short
 line telling the learner they can attempt the problems, then run `/dl-grade`
 to submit, or `/dl-help` if they get stuck — and note their current streak.
+Add a light reminder that they can run `/dl-log` to save the session's
+conversation notes whenever they're wrapping up.
 
 ## Step 8 — Persist progress
 The runtime is ephemeral, so progress only survives once it's pushed. Commit
