@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "learner": "joelvandiver@gmail.com",
+  "rotation": ["rust", "postgres"],
+  "rotation_index": 0,
+  "topics": {
+    "rust": {
+      "curriculum": "curriculum/rust.md",
+      "module": 1,
+      "lesson_seq": 0,
+      "completed_modules": [],
+      "lessons_dir": "lessons/rust"
+    },
+    "postgres": {
+      "curriculum": "curriculum/postgres.md",
+      "module": 1,
+      "lesson_seq": 0,
+      "completed_modules": [],
+      "lessons_dir": "lessons/postgres"
+    }
+  },
+  "active_lesson": null,
+  "streak": 0,
+  "last_lesson_date": null,
+  "history": []
+}
