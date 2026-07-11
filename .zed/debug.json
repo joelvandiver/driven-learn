@@ -1,0 +1,22 @@
+// Zed debug configurations for lesson programs.
+// Works for EVERY lesson, current and future: open the lesson program you want
+// to debug (e.g. src/bin/easy.rs), set breakpoints in the gutter, then run
+// "debugger: start" (F4) from the command palette and pick this configuration.
+// The build step runs from the open file's directory, so cargo resolves the
+// enclosing lesson crate automatically; $ZED_STEM is the file name minus .rs,
+// which matches the binary name.
+[
+  {
+    "label": "Debug current lesson program",
+    "adapter": "CodeLLDB",
+    "request": "launch",
+    "build": {
+      "command": "cargo",
+      "args": ["build", "--bin", "$ZED_STEM"],
+      "cwd": "$ZED_DIRNAME"
+    },
+    "program": "$ZED_WORKTREE_ROOT/target/debug/$ZED_STEM",
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "sourceLanguages": ["rust"]
+  }
+]

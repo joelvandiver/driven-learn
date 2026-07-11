@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+# Run one of this lesson's programs. Every file in src/bin/ is a standalone
+# binary with its own `fn main()`, built by the root Cargo workspace.
+#
+#   ./run                   list the programs
+#   ./run example           the worked example — you type it in from lesson.md
+#   ./run easy              your solution to Easy   — "Warm-up counter"
+#   ./run medium            your solution to Medium — "Parse and shadow"
+#   ./run hard              your solution to Hard   — "Immutable by design"
+#
+#   ./run restart           reset ALL of src/ from the pristine starter/ copy
+#   ./run restart medium    reset just one program
+#
+# Anything after the program name is passed through to it, e.g.
+#   ./run easy --some-flag
+set -euo pipefail
+cd "$(dirname "$0")"
+
+if [[ $# -eq 0 ]]; then
+  echo "usage: ./run <program> | ./run restart [program]"
+  echo "programs in this lesson:"
+  for f in src/bin/*.rs; do
+    echo "  ./run $(basename "$f" .rs)"
+  done
+  exit 0
+fi
+
+if [[ $1 == restart ]]; then
+  target="${2:-all of src/}"
+  read -r -p "Overwrite ${target} with the pristine starter copy? [y/N] " reply
+  [[ $reply == [yY]* ]] || { echo "aborted"; exit 1; }
+  if [[ $# -ge 2 ]]; then
+    cp "starter/bin/$2.rs" "src/bin/$2.rs"
+  else
+    rm -rf src && cp -r starter src
+  fi
+  echo "restored ${target} from starter/"
+  exit 0
+fi
+
+exec cargo run --bin "$1" -- "${@:2}"

@@ -13,6 +13,13 @@ for reading and writing `learning/state.json`.
   from the module row; don't pre-write the whole track.
 - **Worked examples must be runnable.** Rust compiles on stable; Postgres ships
   with its schema + seed data + expected output.
+- **Lessons are directories with code, not lone markdown files.** Every lesson
+  is `learning/lessons/{topic}/{seq}-{slug}/` containing `lesson.md` plus
+  scaffolded starter code the learner edits in place (Rust: a crate with
+  `src/bin/{example,easy,medium,hard}.rs`; Postgres: `setup.sql` +
+  per-problem `.sql` starters). Rust lesson crates are picked up by the root
+  `Cargo.toml` workspace glob so the learner's IDE (Zed/rust-analyzer) gets
+  intellisense — never write a Rust lesson without its crate.
 - **Never leak solutions.** Lesson files and `/dl-help` never contain full
   answers to unattempted problems. `/dl-grade` only shows idiomatic solutions
   for work the learner has genuinely attempted.
