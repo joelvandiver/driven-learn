@@ -3,7 +3,7 @@
 # binary with its own `fn main()`, built by the root Cargo workspace.
 #
 #   ./run                   list the programs
-#   ./run example           the lesson's worked example (prints the expected output)
+#   ./run example           the worked example — you type it in from lesson.md
 #   ./run easy              your solution to Easy   — "Warm-up counter"
 #   ./run medium            your solution to Medium — "Parse and shadow"
 #   ./run hard              your solution to Hard   — "Immutable by design"

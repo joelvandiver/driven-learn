@@ -21,8 +21,9 @@ one module at a time.
 - `/dl-help hard` — hint for a specific problem.
 
 ## How a day looks
-1. Run `/dl-next`. Read the lesson and run the worked example
-   (`./run example` from the lesson directory).
+1. Run `/dl-next`. Read the lesson, then type its worked example into
+   `src/bin/example.rs` yourself (it's scaffolded empty on purpose) and check
+   it with `./run example` from the lesson directory.
 2. Attempt the three problems by editing the scaffolded starter files that live
    right next to the lesson (`src/bin/easy.rs` etc. for Rust, `easy.sql` etc.
    for Postgres), testing as you go — or paste answers in chat.

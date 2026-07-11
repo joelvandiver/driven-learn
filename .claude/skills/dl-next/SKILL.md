@@ -64,22 +64,30 @@ the learner can test their work in place with full IDE intellisense.
 - Scaffold the code next to it:
   - **Rust** — a crate in the lesson directory: `Cargo.toml` with
     `name = "lesson-{SEQ}-{slug}"`, current stable edition, `publish = false`;
-    plus `src/bin/example.rs` (the lesson's worked example, verbatim)
-    and `src/bin/easy.rs` / `medium.rs` / `hard.rs` — each a starter `fn main()`
-    with the problem prompt and acceptance criteria as header comments (no
-    solutions). Also copy the previous Rust lesson's `run` script into the new
+    plus `src/bin/example.rs` — an EMPTY `fn main()` stub whose header comment
+    tells the learner to type the worked example in from `lesson.md` (typing,
+    not pasting, is deliberate retention practice; do NOT put the example code
+    in the file) — and `src/bin/easy.rs` / `medium.rs` / `hard.rs` — each a
+    starter `fn main()` with the problem prompt and acceptance criteria as
+    header comments (no solutions). Also copy the previous Rust lesson's `run` script into the new
     lesson directory (`chmod +x`), updating its header comment to name this
     lesson's problems — it lists and runs the lesson's binaries
     (`./run easy` etc.). Debugging needs no per-lesson setup: the repo-level
     `.zed/debug.json` config works for any lesson binary via the open file.
+    Finally, snapshot the untouched scaffold with `cp -r src starter` — the
+    learner diffs their work against `starter/` and restores from it; cargo
+    ignores it. Never edit `starter/` after scaffolding.
     The root `Cargo.toml` workspace glob
     (`learning/lessons/rust/*`) picks the crate up automatically — do not edit
-    it. Verify with `cargo build` (from the repo root) and
-    `cargo run --bin example` before presenting; the worked example's
+    it. Verify with `cargo build` from the repo root, and verify the worked
+    example by compiling and running the lesson.md code in the session
+    scratchpad (NOT in the lesson crate — `example.rs` stays a stub); its
     output must match what the lesson claims.
   - **Postgres** — `setup.sql` (the worked example's `CREATE TABLE`s + seed
     `INSERT`s + the example query) and `easy.sql` / `medium.sql` / `hard.sql`
-    starters, each with the prompt as a header comment.
+    starters, each with the prompt as a header comment. Snapshot pristine
+    copies into `starter/` (`mkdir starter && cp *.sql starter/`), same as the
+    Rust `starter/` convention.
   - In the lesson's Problems section, tell the learner to edit those starter
     files in place and how to run them (Rust: `cargo run --bin easy` from the
     lesson directory).
