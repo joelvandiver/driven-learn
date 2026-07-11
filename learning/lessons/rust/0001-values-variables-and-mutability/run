@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# Run one of this lesson's programs. Every file in src/bin/ is a standalone
+# binary with its own `fn main()`, built by the root Cargo workspace.
+#
+#   ./run                   list the programs
+#   ./run worked_example    the lesson's worked example (prints the expected output)
+#   ./run easy              your solution to Easy   — "Warm-up counter"
+#   ./run medium            your solution to Medium — "Parse and shadow"
+#   ./run hard              your solution to Hard   — "Immutable by design"
+#
+# Anything after the program name is passed through to it, e.g.
+#   ./run easy --some-flag
+set -euo pipefail
+cd "$(dirname "$0")"
+
+if [[ $# -eq 0 ]]; then
+  echo "usage: ./run <program>"
+  echo "programs in this lesson:"
+  for f in src/bin/*.rs; do
+    echo "  ./run $(basename "$f" .rs)"
+  done
+  exit 0
+fi
+
+exec cargo run --bin "$1" -- "${@:2}"

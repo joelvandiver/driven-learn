@@ -67,7 +67,12 @@ the learner can test their work in place with full IDE intellisense.
     plus `src/bin/worked_example.rs` (the lesson's worked example, verbatim)
     and `src/bin/easy.rs` / `medium.rs` / `hard.rs` — each a starter `fn main()`
     with the problem prompt and acceptance criteria as header comments (no
-    solutions). The root `Cargo.toml` workspace glob
+    solutions). Also copy the previous Rust lesson's `run` script into the new
+    lesson directory (`chmod +x`), updating its header comment to name this
+    lesson's problems — it lists and runs the lesson's binaries
+    (`./run easy` etc.). Debugging needs no per-lesson setup: the repo-level
+    `.zed/debug.json` config works for any lesson binary via the open file.
+    The root `Cargo.toml` workspace glob
     (`learning/lessons/rust/*`) picks the crate up automatically — do not edit
     it. Verify with `cargo build` (from the repo root) and
     `cargo run --bin worked_example` before presenting; the worked example's
