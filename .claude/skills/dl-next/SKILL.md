@@ -72,7 +72,8 @@ the learner can test their work in place with full IDE intellisense.
     header comments (no solutions). Also copy the previous Rust lesson's `run` script into the new
     lesson directory (`chmod +x`), updating its header comment to name this
     lesson's problems — it lists and runs the lesson's binaries
-    (`./run easy` etc.). Debugging needs no per-lesson setup: the repo-level
+    (`./run easy` etc.) and resets work from the pristine snapshot
+    (`./run restart [program]`). Debugging needs no per-lesson setup: the repo-level
     `.zed/debug.json` config works for any lesson binary via the open file.
     Finally, snapshot the untouched scaffold with `cp -r src starter` — the
     learner diffs their work against `starter/` and restores from it; cargo

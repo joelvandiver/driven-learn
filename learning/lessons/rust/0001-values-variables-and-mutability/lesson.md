@@ -106,7 +106,8 @@ place (Zed gives you full rust-analyzer intellisense via the root workspace)
 and test with `cargo run --bin easy` (or `medium` / `hard`) from this lesson's
 directory. `/dl-grade` reads those files; you can also paste answers into chat.
 A pristine copy of the scaffold is kept in `starter/` — compare against it any
-time with `diff -ru starter src`, or copy a file back to start a problem over.
+time with `diff -ru starter src`, or start over with `./run restart` (all of
+`src/`) or `./run restart medium` (one program).
 
 ### Easy — "Warm-up counter"
 Write a `fn main()` that:
