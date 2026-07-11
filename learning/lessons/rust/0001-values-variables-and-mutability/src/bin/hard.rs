@@ -13,5 +13,6 @@
 // when grading, why each binding is or isn't mutable.
 
 fn main() {
-    // your code here
+    let average = (88 + 92 + 79) / 3;
+    println!("average is {average}");
 }

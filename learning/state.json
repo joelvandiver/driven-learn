@@ -6,9 +6,9 @@
   "topics": {
     "rust": {
       "curriculum": "curriculum/rust.md",
-      "module": 1,
+      "module": 2,
       "lesson_seq": 1,
-      "completed_modules": [],
+      "completed_modules": [1],
       "lessons_dir": "lessons/rust"
     },
     "postgres": {
@@ -19,16 +19,11 @@
       "lessons_dir": "lessons/postgres"
     }
   },
-  "active_lesson": {
-    "topic": "rust",
-    "module": 1,
-    "seq": "0001",
-    "path": "learning/lessons/rust/0001-values-variables-and-mutability/lesson.md",
-    "assigned_date": "2026-07-10"
-  },
+  "active_lesson": null,
   "streak": 1,
   "last_lesson_date": "2026-07-10",
   "history": [
-    { "seq": "0001", "topic": "rust", "module": 1, "event": "assigned", "date": "2026-07-10" }
+    { "seq": "0001", "topic": "rust", "module": 1, "event": "assigned", "date": "2026-07-10" },
+    { "seq": "0001", "topic": "rust", "module": 1, "event": "graded", "result": "mastered", "date": "2026-07-11" }
   ]
 }

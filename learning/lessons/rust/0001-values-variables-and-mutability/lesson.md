@@ -4,7 +4,7 @@ module: 1
 module_title: Values, variables, and mutability
 seq: 0001
 date: 2026-07-10
-status: assigned
+status: graded
 ---
 
 # Rust · Module 1 — Values, variables, and mutability

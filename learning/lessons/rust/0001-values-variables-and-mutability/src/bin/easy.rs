@@ -9,5 +9,8 @@
 // `start` must remain immutable (no `mut` on it).
 
 fn main() {
-    // your code here
+    let start = 3;
+    let mut total = start;
+    total += 7;
+    println!("total is {total}");
 }

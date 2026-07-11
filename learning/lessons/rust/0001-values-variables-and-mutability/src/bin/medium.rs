@@ -12,4 +12,6 @@
 fn main() {
     let raw = "  16  ";
     // shadow `raw` into an i32, then print its square
+    let raw: i32 = raw.trim().parse().expect("expect a number");
+    println!("square is {}", raw * raw);
 }
