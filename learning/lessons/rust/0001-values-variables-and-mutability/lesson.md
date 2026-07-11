@@ -44,9 +44,9 @@ your intent better — e.g. parsing a `String` into a number and keeping the sam
 name.
 
 ## Worked example
-This code is scaffolded next to this file at `src/bin/worked_example.rs` — run
-it from this lesson's directory with `cargo run --bin worked_example` (or from
-the repo root with `-p lesson-0001-values-variables-and-mutability`).
+This code is scaffolded next to this file at `src/bin/example.rs` — run it
+from this lesson's directory with `./run example` or `cargo run --bin example`
+(or from the repo root with `-p lesson-0001-values-variables-and-mutability`).
 ```rust
 fn main() {
     // Immutable by default: `count` names the value 5 and cannot be reassigned.

@@ -22,7 +22,7 @@ one module at a time.
 
 ## How a day looks
 1. Run `/dl-next`. Read the lesson and run the worked example
-   (`cargo run --bin worked_example` from the lesson directory).
+   (`./run example` from the lesson directory).
 2. Attempt the three problems by editing the scaffolded starter files that live
    right next to the lesson (`src/bin/easy.rs` etc. for Rust, `easy.sql` etc.
    for Postgres), testing as you go — or paste answers in chat.
@@ -44,7 +44,7 @@ learning/
     postgres.md         # 20-module ordered roadmap
   lessons/<topic>/<seq>-<slug>/   # one directory per lesson:
     lesson.md           #   the lesson itself
-    Cargo.toml, src/bin/          #   (rust) crate: worked_example + easy/medium/hard starters
+    Cargo.toml, src/bin/          #   (rust) crate: example + easy/medium/hard starters
     setup.sql, *.sql              #   (postgres) schema/seed + easy/medium/hard starters
   grades/<topic>/       # grade reports from /dl-grade
 ```

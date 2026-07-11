@@ -64,7 +64,7 @@ the learner can test their work in place with full IDE intellisense.
 - Scaffold the code next to it:
   - **Rust** — a crate in the lesson directory: `Cargo.toml` with
     `name = "lesson-{SEQ}-{slug}"`, current stable edition, `publish = false`;
-    plus `src/bin/worked_example.rs` (the lesson's worked example, verbatim)
+    plus `src/bin/example.rs` (the lesson's worked example, verbatim)
     and `src/bin/easy.rs` / `medium.rs` / `hard.rs` — each a starter `fn main()`
     with the problem prompt and acceptance criteria as header comments (no
     solutions). Also copy the previous Rust lesson's `run` script into the new
@@ -75,7 +75,7 @@ the learner can test their work in place with full IDE intellisense.
     The root `Cargo.toml` workspace glob
     (`learning/lessons/rust/*`) picks the crate up automatically — do not edit
     it. Verify with `cargo build` (from the repo root) and
-    `cargo run --bin worked_example` before presenting; the worked example's
+    `cargo run --bin example` before presenting; the worked example's
     output must match what the lesson claims.
   - **Postgres** — `setup.sql` (the worked example's `CREATE TABLE`s + seed
     `INSERT`s + the example query) and `easy.sql` / `medium.sql` / `hard.sql`

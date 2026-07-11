@@ -16,7 +16,7 @@ for reading and writing `learning/state.json`.
 - **Lessons are directories with code, not lone markdown files.** Every lesson
   is `learning/lessons/{topic}/{seq}-{slug}/` containing `lesson.md` plus
   scaffolded starter code the learner edits in place (Rust: a crate with
-  `src/bin/{worked_example,easy,medium,hard}.rs`; Postgres: `setup.sql` +
+  `src/bin/{example,easy,medium,hard}.rs`; Postgres: `setup.sql` +
   per-problem `.sql` starters). Rust lesson crates are picked up by the root
   `Cargo.toml` workspace glob so the learner's IDE (Zed/rust-analyzer) gets
   intellisense — never write a Rust lesson without its crate.

@@ -1,4 +1,4 @@
-// Worked example from the lesson — run with: cargo run --bin worked_example
+// Worked example from the lesson — run with: cargo run --bin example
 fn main() {
     // Immutable by default: `count` names the value 5 and cannot be reassigned.
     let count = 5;
