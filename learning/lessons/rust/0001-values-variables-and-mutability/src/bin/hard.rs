@@ -15,4 +15,5 @@
 fn main() {
     let average = (88 + 92 + 79) / 3;
     println!("average is {average}");
+    // How was this hard?
 }
