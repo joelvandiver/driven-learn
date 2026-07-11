@@ -1,0 +1,5 @@
+[workspace]
+resolver = "3"
+# Every Rust lesson directory is a workspace member, so rust-analyzer (Zed)
+# gives intellisense across all of them. /dl-next creates one crate per lesson.
+members = ["learning/lessons/rust/*"]

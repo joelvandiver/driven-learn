@@ -1,0 +1,5 @@
+[package]
+name = "lesson-0001-values-variables-and-mutability"
+version = "0.1.0"
+edition = "2024"
+publish = false

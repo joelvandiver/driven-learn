@@ -44,6 +44,9 @@ your intent better — e.g. parsing a `String` into a number and keeping the sam
 name.
 
 ## Worked example
+This code is scaffolded next to this file at `src/bin/worked_example.rs` — run
+it from this lesson's directory with `cargo run --bin worked_example` (or from
+the repo root with `-p lesson-0001-values-variables-and-mutability`).
 ```rust
 fn main() {
     // Immutable by default: `count` names the value 5 and cannot be reassigned.
@@ -97,9 +100,11 @@ outer level: 1
 
 ## Problems
 
-Save your work under `learning/submissions/rust/0001-values-variables-and-mutability/`
-(e.g. `easy.rs`, `medium.rs`, `hard.rs`), or just paste it into chat when you
-run `/dl-grade`.
+Starter code for each problem is scaffolded next to this file in
+`src/bin/easy.rs`, `src/bin/medium.rs`, and `src/bin/hard.rs` — edit those in
+place (Zed gives you full rust-analyzer intellisense via the root workspace)
+and test with `cargo run --bin easy` (or `medium` / `hard`) from this lesson's
+directory. `/dl-grade` reads those files; you can also paste answers into chat.
 
 ### Easy — "Warm-up counter"
 Write a `fn main()` that:

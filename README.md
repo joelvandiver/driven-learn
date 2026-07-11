@@ -21,9 +21,11 @@ one module at a time.
 - `/dl-help hard` — hint for a specific problem.
 
 ## How a day looks
-1. Run `/dl-next`. Read the lesson and the worked example.
-2. Attempt the three problems. Paste answers in chat, or save files under
-   `learning/submissions/<topic>/<seq>-<slug>/` (e.g. `easy.rs`, `medium.sql`).
+1. Run `/dl-next`. Read the lesson and run the worked example
+   (`cargo run --bin worked_example` from the lesson directory).
+2. Attempt the three problems by editing the scaffolded starter files that live
+   right next to the lesson (`src/bin/easy.rs` etc. for Rust, `easy.sql` etc.
+   for Postgres), testing as you go — or paste answers in chat.
 3. Stuck? `/dl-help`. Ready? `/dl-grade`.
 4. Master Easy + Medium (and make a real dent in Hard) and the module is marked
    complete — `/dl-next` moves you forward. Otherwise, keep practicing.
@@ -34,15 +36,22 @@ one module at a time.
   dl-next/SKILL.md      # lesson generator
   dl-grade/SKILL.md     # grader
   dl-help/SKILL.md      # hint-giver
+Cargo.toml              # workspace: members = learning/lessons/rust/* (IDE intellisense)
 learning/
   state.json            # progress: current module per topic, rotation, streak, history
   curriculum/
     rust.md             # 20-module ordered roadmap
     postgres.md         # 20-module ordered roadmap
-  lessons/<topic>/      # generated lessons (assigned by /dl-next)
-  submissions/<topic>/  # your work
+  lessons/<topic>/<seq>-<slug>/   # one directory per lesson:
+    lesson.md           #   the lesson itself
+    Cargo.toml, src/bin/          #   (rust) crate: worked_example + easy/medium/hard starters
+    setup.sql, *.sql              #   (postgres) schema/seed + easy/medium/hard starters
   grades/<topic>/       # grade reports from /dl-grade
 ```
+
+Your work lives in the starter files next to each lesson — edit them in place.
+Because every Rust lesson crate is a member of the root Cargo workspace, Zed
+(rust-analyzer) gives full intellisense with no per-lesson setup.
 
 ## Adding a new topic later
 1. Write `learning/curriculum/<topic>.md` as an ordered module table (copy the

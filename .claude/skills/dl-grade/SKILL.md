@@ -17,7 +17,11 @@ to recover the three problems and their acceptance criteria.
 ## Step 2 — Collect the submission
 Gather the learner's work, in priority order:
 1. Code/answers pasted in the current chat message (or recent messages).
-2. Files under `learning/submissions/{topic}/{SEQ}-{slug}/`.
+2. The scaffolded starter files in the lesson's directory (next to
+   `active_lesson.path`): `src/bin/{easy,medium,hard}.rs` for Rust,
+   `{easy,medium,hard}.sql` for Postgres. Treat a file still matching its
+   scaffolded starter (just the prompt comments and an empty/starter body) as
+   "not attempted".
 If you find work for only some problems, grade those and mark the rest
 "not attempted". If the user named a single problem (e.g. `/dl-grade medium`),
 grade only that one.
@@ -27,8 +31,10 @@ files, then stop.
 ## Step 3 — Evaluate each attempted problem
 For each problem, judge on three axes and VERIFY, don't just eyeball:
 - **Correctness** — does it meet the acceptance criteria?
-  - Rust: if `cargo`/`rustc` is available, compile and run it in a scratch dir
-    (use the session scratchpad). Report compiler errors verbatim if it fails.
+  - Rust: if `cargo` is available, run the learner's file where it lives —
+    `cargo run --bin {easy|medium|hard}` from the lesson directory (each lesson
+    is a workspace crate). For chat-pasted code, use a scratch dir. Report
+    compiler errors verbatim if it fails.
   - Postgres: if `psql`/a local server is available, run it against the lesson's
     schema. Otherwise, trace the query by hand against the seed data and state
     that you reasoned it through rather than executing.
@@ -71,13 +77,14 @@ Write `state.json` back.
 
 ## Step 7 — Persist progress
 The runtime is ephemeral, so progress only survives once it's pushed. Stage the
-learner's submission (if it lives in `learning/submissions/`), the grade report,
-the updated lesson frontmatter, and `learning/state.json`, then commit and push
-to the current branch:
+learner's edited starter files in the lesson directory, the grade report, the
+updated lesson frontmatter, and `learning/state.json`, then commit and push to
+the current branch:
 `git add learning/ && git commit -m "dl-grade: {topic} module {n} ({SEQ}) — {result}" && git push`
-If the learner pasted their code in chat rather than saving files, first write
-it to `learning/submissions/{topic}/{SEQ}-{slug}/` so their attempt is captured
-in the repo too. Retry the push with backoff on network errors.
+If the learner pasted their code in chat rather than editing the scaffolded
+files, first write it into those starter files in the lesson directory so their
+attempt is captured in the repo too. Retry the push with backoff on network
+errors.
 
 ## Tone
 Lead with something they got right. Be concrete about fixes. Close with one

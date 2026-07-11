@@ -53,11 +53,32 @@ Write a self-contained lesson with EXACTLY these sections:
 Calibrate difficulty to the module's position in the curriculum — early modules
 stay gentle; later modules assume prior modules.
 
-## Step 5 — Save the lesson
+## Step 5 — Save the lesson and scaffold the code
+Each lesson is a DIRECTORY holding the markdown plus runnable starter code, so
+the learner can test their work in place with full IDE intellisense.
+
 - Increment `topics[topic].lesson_seq` by 1; call it `SEQ` (zero-padded to 4).
 - Slugify the module title (lowercase, hyphens).
-- Write the lesson to `learning/{lessons_dir}/{SEQ}-{slug}.md`.
-- Prepend YAML frontmatter to that file:
+- Create `learning/{lessons_dir}/{SEQ}-{slug}/` and write the lesson to
+  `lesson.md` inside it.
+- Scaffold the code next to it:
+  - **Rust** — a crate in the lesson directory: `Cargo.toml` with
+    `name = "lesson-{SEQ}-{slug}"`, current stable edition, `publish = false`;
+    plus `src/bin/worked_example.rs` (the lesson's worked example, verbatim)
+    and `src/bin/easy.rs` / `medium.rs` / `hard.rs` — each a starter `fn main()`
+    with the problem prompt and acceptance criteria as header comments (no
+    solutions). The root `Cargo.toml` workspace glob
+    (`learning/lessons/rust/*`) picks the crate up automatically — do not edit
+    it. Verify with `cargo build` (from the repo root) and
+    `cargo run --bin worked_example` before presenting; the worked example's
+    output must match what the lesson claims.
+  - **Postgres** — `setup.sql` (the worked example's `CREATE TABLE`s + seed
+    `INSERT`s + the example query) and `easy.sql` / `medium.sql` / `hard.sql`
+    starters, each with the prompt as a header comment.
+  - In the lesson's Problems section, tell the learner to edit those starter
+    files in place and how to run them (Rust: `cargo run --bin easy` from the
+    lesson directory).
+- Prepend YAML frontmatter to `lesson.md`:
   ```
   ---
   topic: <topic>
@@ -96,7 +117,8 @@ there's no upstream, set one with `git push -u origin <current-branch>`. Never
 switch branches to do this.
 
 ## Where the learner puts work
-When you present the lesson, remind them they can either paste their answers
-into chat when grading, or drop files under
-`learning/submissions/{topic}/{SEQ}-{slug}/` (e.g. `easy.rs`, `medium.sql`).
+The learner edits the scaffolded starter files in the lesson directory
+(`src/bin/easy.rs` etc. for Rust, `easy.sql` etc. for Postgres) — their work
+lives right next to `lesson.md`. When you present the lesson, remind them of
+this and that they can alternatively paste answers into chat when grading.
 `/dl-grade` looks in both places.
