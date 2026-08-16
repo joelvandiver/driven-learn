@@ -2,7 +2,7 @@
   "version": 1,
   "learner": "joelvandiver@gmail.com",
   "rotation": ["rust", "postgres"],
-  "rotation_index": 1,
+  "rotation_index": 0,
   "topics": {
     "rust": {
       "curriculum": "curriculum/rust.md",
@@ -14,16 +14,23 @@
     "postgres": {
       "curriculum": "curriculum/postgres.md",
       "module": 1,
-      "lesson_seq": 0,
+      "lesson_seq": 1,
       "completed_modules": [],
       "lessons_dir": "lessons/postgres"
     }
   },
-  "active_lesson": null,
+  "active_lesson": {
+    "topic": "postgres",
+    "module": 1,
+    "seq": "0001",
+    "path": "learning/lessons/postgres/0001-querying-basics",
+    "assigned_date": "2026-07-22"
+  },
   "streak": 1,
-  "last_lesson_date": "2026-07-10",
+  "last_lesson_date": "2026-07-22",
   "history": [
     { "seq": "0001", "topic": "rust", "module": 1, "event": "assigned", "date": "2026-07-10" },
-    { "seq": "0001", "topic": "rust", "module": 1, "event": "graded", "result": "mastered", "date": "2026-07-11" }
+    { "seq": "0001", "topic": "rust", "module": 1, "event": "graded", "result": "mastered", "date": "2026-07-11" },
+    { "seq": "0001", "topic": "postgres", "module": 1, "event": "assigned", "date": "2026-07-22" }
   ]
 }
