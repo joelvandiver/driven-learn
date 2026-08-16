@@ -33,22 +33,28 @@ fn create_ticket() -> String {
 }
 
 fn stamp(ticket: String) -> String {
-    // your code here
-    ticket
+    ticket + "-stamped"
 }
 
 fn archive(ticket: String) {
-    // your code here
+    println!("archiving {ticket}")
 }
 
 struct Session;
 
 impl Drop for Session {
     fn drop(&mut self) {
-        // your code here
+        println!("closing session")
     }
 }
 
 fn main() {
-    // your code here
+    let ticket = create_ticket();
+    let stamped = stamp(ticket);
+    archive(stamped);
+
+    {
+        let _session = Session;
+    }
+    println!("main continues")
 }

@@ -13,5 +13,10 @@
 // still be used after `count2` is created, since i32 is Copy.
 
 fn main() {
-    // your code here
+    let greeting = String::from("hi");
+    let greeting2 = greeting;
+    let count = 3;
+    let count2 = count;
+    println!("greeting2: {greeting2}");
+    println!("count is {count} and count2 is {count2}");
 }

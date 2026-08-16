@@ -13,10 +13,12 @@
 
 fn process(s: String) -> String {
     // your code here
-    s
+    s + " (processed)"
 }
 
 fn main() {
     let message = String::from("draft");
     // call process(message), shadow `message` with the result, then print it
+    let message = process(message);
+    println!("message={message}");
 }
