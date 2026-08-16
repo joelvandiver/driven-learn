@@ -1,0 +1,18 @@
+-- Hard — Page 2 of the price list
+--
+-- The catalog is shown 3 books per page, sorted by price cheapest to most
+-- expensive. Return page 2 -- the 4th, 5th, and 6th cheapest books. Show title
+-- and price.
+--
+-- Your ordering must be fully deterministic: if two books ever shared a price,
+-- the same three rows must come back every single time.
+--
+-- Goal, not steps: skip the first page, take the next three, and guarantee a
+-- stable order even under price ties. There are 8 books, so page 2 is the
+-- middle slice of the price ranking.
+--
+-- Acceptance: exactly 3 rows -- the books ranked 4th-6th by ascending price --
+-- with a tiebreaker that makes the result repeatable.
+--
+-- Run setup.sql first, then this file. Write your query below.
+

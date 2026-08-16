@@ -1,0 +1,12 @@
+-- Medium — A slice of mid-length fiction
+--
+-- List the fiction books whose length is between 250 and 450 pages (inclusive),
+-- oldest first by published_year, breaking any ties by title alphabetically.
+-- Show title, published_year, and pages.
+--
+-- Acceptance: 4 rows, all fiction, every one in the 250-450 page range, ordered
+-- by year ascending (the 1965 book first). Use a comparison on both ends of the
+-- range and a two-level ORDER BY.
+--
+-- Run setup.sql first, then this file. Write your query below.
+

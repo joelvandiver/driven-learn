@@ -1,7 +1,7 @@
 {
   "version": 1,
   "learner": "joelvandiver@gmail.com",
-  "rotation": ["rust", "postgres"],
+  "rotation": ["rust"],
   "rotation_index": 0,
   "topics": {
     "rust": {
